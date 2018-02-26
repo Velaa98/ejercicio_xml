@@ -20,7 +20,37 @@ def nombres_efectos(arbol):
 			lista.remove(i)
 	return lista
 
+def cuenta_pistas(arbol):
+	audio = []
+	midi = []
+	lista =[]
+	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
+		audio.append(i)
+	for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
+		midi.append(i)
+	lista = audio + midi
+	return ('Hay {} pistas en total.'.format(len(lista)))
+
+def pistas_por_cadena(arbol, cadena):
+	audio = []
+	midi = []
+	lista = []
+	l_final = []
+	encontrado = False
+	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
+		audio.append(i)
+	for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
+		midi.append(i)
+	lista = audio + midi
+	for i in lista:
+		if i.find(cadena) >= 0:
+			encontrado = True
+			l_final.append(i)
+	if encontrado:
+		return l_final
+	else:
+		return 'No se ha encontrado ninguna pista que contenga la cadena introducida.'
+
 arbol = etree.parse('daydream.xml')
 
-for i in nombres_efectos(arbol):
-	print(i)
+print(pistas_por_cadena(arbol, 'ola'))
