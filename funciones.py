@@ -31,11 +31,12 @@ def cuenta_pistas(arbol):
 	lista = audio + midi
 	return ('Hay {} pistas en total.'.format(len(lista)))
 
-def pistas_por_cadena(arbol, cadena):
+def pistas_por_cadena(arbol):
 	audio = []
 	midi = []
 	lista = []
 	l_final = []
+	cadena = input('Introduce una cadena: ')
 	encontrado = False
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)
@@ -53,4 +54,4 @@ def pistas_por_cadena(arbol, cadena):
 
 arbol = etree.parse('daydream.xml')
 
-print(pistas_por_cadena(arbol, 'ola'))
+print(pistas_por_cadena(arbol))
