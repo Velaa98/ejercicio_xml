@@ -14,16 +14,13 @@ def nombres_efectos(arbol):
 	for i in arbol.xpath('//Tracks//MidiTrack//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'):
 		if i not in midi:
 			midi.append(i)
-	lista = audio + group + midi
-	for i in lista:
-		if lista.count(i) > 1:
-			lista.remove(i)
+	lista = list(set(audio + group + midi))
 	return lista
 
 def cuenta_pistas(arbol):
 	audio = []
 	midi = []
-	lista =[]
+	lista = []
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)
 	for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
@@ -52,6 +49,30 @@ def pistas_por_cadena(arbol):
 	else:
 		return 'No se ha encontrado ninguna pista que contenga la cadena introducida.'
 
+def pistas_por_efecto(arbol):
+	audio = []
+	midi = []
+	group = []
+	lista = []
+	cadena = input('Introduce una cadena: ')
+	dic = {}
+	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
+		audio.append(i)
+	for i in audio:
+		dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
+	for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
+		midi.append(i)
+	for i in midi:
+		dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
+	for i in arbol.xpath('//Tracks/GroupTrack/Name/EffectiveName/@Value'):
+		group.append(i)
+	for i in group:
+		dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
+	for c, v in dic.items():
+		if cadena in v:
+			lista.append(c)
+	return lista
+
 arbol = etree.parse('daydream.xml')
 
-print(pistas_por_cadena(arbol))
+print(pistas_por_efecto(arbol))
