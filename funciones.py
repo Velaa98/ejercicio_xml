@@ -69,9 +69,13 @@ def pistas_por_efecto(arbol):
 	for i in group:
 		dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
 	for c, v in dic.items():
-		if cadena in v:
-			lista.append(c)
+		for i in v:
+			if i.find(cadena) >= 0:
+				lista.append(c)
 	return lista
+
+# def num_pistas_efecto(arbol):
+	
 
 arbol = etree.parse('daydream.xml')
 
