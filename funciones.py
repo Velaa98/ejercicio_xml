@@ -74,8 +74,35 @@ def pistas_por_efecto(arbol):
 				lista.append(c)
 	return lista
 
-# def num_pistas_efecto(arbol):
+def num_pistas_efecto(arbol):
+	cad = input('¿Quieres buscar en las pistas de audio o en las de MIDI? ')
+	cadena = input('Introduce una cadena: ')
+	if cad.title() == 'Audio':
+		dic = {}
+		lista = []
+		for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
+			audio.append(i)
+		for i in audio:
+			dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
+		for c, v in dic.items():
+			for i in v:
+				if i.find(cadena) >= 0:
+					lista.append(c)
+		return lista
+	if cad.title() == 'Midi':
+		dic = {}
+		lista = []
+		for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
+			midi.append(i)
+		for i in midi:
+			dic['{}'.format(i)] = arbol.xpath('//*[@Value = "{}"]/../..//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'.format(i))
 	
+		for c, v in dic.items():
+			for i in v:
+				if i.find(cadena) >= 0:
+					lista.append(c)
+		return lista
+
 
 arbol = etree.parse('daydream.xml')
 
