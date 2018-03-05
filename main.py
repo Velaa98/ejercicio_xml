@@ -21,7 +21,8 @@ while opcion != '0':
 		print('\nLos efectos empleados en el proyecto son: ')
 		for i in funciones.nombres_efectos(arbol):
 			print(i)
-
+	if opcion == '2':
+		print('\n{}'.format(funciones.cuenta_pistas(arbol)))
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
