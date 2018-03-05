@@ -102,8 +102,3 @@ def num_pistas_efecto(arbol):
 				if i.find(cadena) >= 0:
 					lista.append(c)
 		return lista
-
-
-arbol = etree.parse('daydream.xml')
-
-print(cuenta_pistas(arbol))
