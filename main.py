@@ -1,6 +1,6 @@
 from lxml import etree
 import os
-import funciones
+import funciones as f
 
 os.system('clear')
 
@@ -19,10 +19,16 @@ opcion = input('Selecciona una opción: ')
 while opcion != '0':
 	if opcion == '1':
 		print('\nLos efectos empleados en el proyecto son: ')
-		for i in funciones.nombres_efectos(arbol):
+		for i in f.nombres_efectos(arbol):
 			print(i)
 	if opcion == '2':
-		print('\n{}'.format(funciones.cuenta_pistas(arbol)))
+		print('\n{}'.format(f.cuenta_pistas(arbol)))
+	if opcion == '3':
+		if type(f.pistas_por_cadena(arbol)) == str:
+			print(f.pistas_por_cadena(arbol))
+		else:
+			for i in pistas_por_cadena(arbol):
+				print(i)
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
