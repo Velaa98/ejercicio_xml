@@ -1,4 +1,5 @@
 import os
+import funciones
 
 os.system('clear')
 
@@ -8,5 +9,3 @@ menu = '1.- Muestra los efectos empleados.\n2.- ¿Cuántas pistas de Audio y MID
 		\n0.- Salir'
 
 opcion = input('Selecciona una opción: ')
-
-while 
