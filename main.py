@@ -18,10 +18,10 @@ opcion = input('Selecciona una opción: ')
 
 while opcion != '0':
 	if opcion == '1':
-		print('Los efectos empleados en el proyecto son: ')
+		print('\nLos efectos empleados en el proyecto son: ')
 		for i in funciones.nombres_efectos(arbol):
 			print(i)
 
-	opcion = input('Selecciona una opción: ')
+	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
