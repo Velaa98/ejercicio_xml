@@ -1,7 +1,10 @@
+from lxml import etree
 import os
 import funciones
 
 os.system('clear')
+
+arbol = etree.parse('daydream.xml')
 
 menu = '1.- Muestra los efectos empleados.\n2.- ¿Cuántas pistas de Audio y MIDI hay en total?\
 		\n3.- Muestra las pistas que contienen una cadena.\n4.- Muestra las pistas que tienen algún efecto que contenga una cadena.\
@@ -11,6 +14,11 @@ menu = '1.- Muestra los efectos empleados.\n2.- ¿Cuántas pistas de Audio y MID
 opcion = input('Selecciona una opción: ')
 
 while opcion != '0':
+	if opcion == '1':
+		print('Los efectos empleados en el proyecto son: ')
+		for i in funciones.nombres_efectos(arbol):
+			print(i)
+
 	opcion = input('Selecciona una opción: ')
 
 print('¡Adiós!')

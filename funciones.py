@@ -7,13 +7,13 @@ def nombres_efectos(arbol):
 	lista = []
 	for i in arbol.xpath('//Tracks//AudioTrack//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'):
 		if i not in audio:
-			audio.append(i)
+			audio.append(i.rstrip('_x64'))
 	for i in arbol.xpath('//Tracks//GroupTrack//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'):
 		if i not in group:
-			group.append(i)
+			group.append(i.rstrip('_x64'))
 	for i in arbol.xpath('//Tracks//MidiTrack//DeviceChain//Devices//PluginDevice//PluginDesc//VstPluginInfo//PlugName//@Value'):
 		if i not in midi:
-			midi.append(i)
+			midi.append(i.rstrip('_x64'))
 	lista = list(set(audio + group + midi))
 	return lista
 
