@@ -45,7 +45,7 @@ def pistas_por_cadena(arbol):
 	if encontrado:
 		return l_final
 	else:
-		return 'No se ha encontrado ninguna pista que contenga la cadena introducida.'
+		return 0
 
 def pistas_por_efecto(arbol):
 	audio = []

@@ -24,7 +24,8 @@ while opcion != '0':
 	if opcion == '2':
 		print('\n{}'.format(f.cuenta_pistas(arbol)))
 	if opcion == '3':
-		for i in f.pistas_por_cadena
+		for i in f.pistas_por_cadena(arbol):
+			print(i)
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
