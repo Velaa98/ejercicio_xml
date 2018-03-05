@@ -9,3 +9,8 @@ menu = '1.- Muestra los efectos empleados.\n2.- ¿Cuántas pistas de Audio y MID
 		\n0.- Salir'
 
 opcion = input('Selecciona una opción: ')
+
+while opcion != '0':
+	opcion = input('Selecciona una opción: ')
+
+print('¡Adiós!')
