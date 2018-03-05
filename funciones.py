@@ -20,13 +20,11 @@ def nombres_efectos(arbol):
 def cuenta_pistas(arbol):
 	audio = []
 	midi = []
-	lista = []
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)
 	for i in arbol.xpath('//Tracks/MidiTrack/Name/EffectiveName/@Value'):
 		midi.append(i)
-	lista = audio + midi
-	return ('Hay {} pistas en total.'.format(len(lista)))
+	return ('Hay {} pistas de audio y {} de MIDI.'.format(len(audio), len(midi)))
 
 def pistas_por_cadena(arbol):
 	audio = []
@@ -108,4 +106,4 @@ def num_pistas_efecto(arbol):
 
 arbol = etree.parse('daydream.xml')
 
-print(num_pistas_efecto(arbol))
+print(cuenta_pistas(arbol))
