@@ -49,12 +49,11 @@ def pistas_por_cadena(arbol):
 	else:
 		return 0
 
-def pistas_por_efecto(arbol):
+def pistas_por_efecto(arbol, cadena):
 	audio = []
 	midi = []
 	group = []
 	lista = []
-	cadena = input('Introduce una cadena: ')
 	dic = {}
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)
