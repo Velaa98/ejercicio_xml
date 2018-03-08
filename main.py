@@ -33,8 +33,11 @@ while opcion != '0':
 		cadena = input('Introduce una cadena: ')
 		lista = f.pistas_por_efecto(arbol, cadena)
 		print('Las pistas que tienen efectos que contienen la cadena "{}" son: '.format(cadena))
+		', '.join(lista)
 		for i in lista:
 			print(i)
+	if opcion == '5':
+		cadena = input('Introduce una cadena: ')
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
