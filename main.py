@@ -37,7 +37,9 @@ while opcion != '0':
 		for i in lista:
 			print(i)
 	if opcion == '5':
-		cadena = input('Introduce una cadena: ')
+		lista = f.num_pistas_efecto(arbol, input('Introduce una cadena: '))
+		for i in lista:
+			print(i)
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
