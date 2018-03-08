@@ -32,6 +32,7 @@ def pistas_por_cadena(arbol):
 	lista = []
 	l_final = []
 	cadena = input('Introduce una cadena: ')
+	print(cadena)
 	encontrado = False
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)
@@ -40,6 +41,7 @@ def pistas_por_cadena(arbol):
 	lista = audio + midi
 	for i in lista:
 		if i.find(cadena) >= 0:
+			print(i)
 			encontrado = True
 			l_final.append(i)
 	if encontrado:
