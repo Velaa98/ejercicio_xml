@@ -87,7 +87,7 @@ def num_pistas_efecto(arbol):
 			for i in v:
 				if i.find(cadena) >= 0:
 					lista.append(c)
-		return lista
+		return len(lista)
 	if cad.title() == 'Midi':
 		dic = {}
 		lista = []
@@ -101,4 +101,4 @@ def num_pistas_efecto(arbol):
 			for i in v:
 				if i.find(cadena) >= 0:
 					lista.append(c)
-		return lista
+		return len(lista)
