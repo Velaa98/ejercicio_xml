@@ -33,8 +33,14 @@ while opcion != '0':
 		if type(lista) == list:
 			print(', '.join(lista))
 	if opcion == '4':
-		print(', '.join(f.pistas_por_efecto(arbol)))
-		print('Las pistas que tienen efectos que contienen la cadena introducida son: ')
+		lista = f.pistas_por_efecto(arbol)
+		if len(lista) == 1:
+			print('La pista que tiene algún efecto que contiene la cadena introducida es: ', end = '')
+		elif len(lista)	== 0:
+			print('No hay ninguna pista que tenga algún efecto que contenga la cadena introducida.', end = '')
+		else:
+			print('Las pistas que tienen efectos que contienen la cadena introducida son: ', end = '')
+		print(', '.join(lista))
 	if opcion == '5':
 		lista = f.num_pistas_efecto(arbol, input('Introduce una cadena: '))
 		for i in lista:
