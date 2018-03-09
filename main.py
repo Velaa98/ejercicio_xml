@@ -23,9 +23,14 @@ while opcion != '0':
 	if opcion == '2':
 		print('\n{}'.format(f.cuenta_pistas(arbol)))
 	if opcion == '3':
-		if f.pistas_por_cadena(arbol) == 0:
-			print('No se ha encontrado ninguna pista que contenga la cadena introducida.')
-		print(','.join(f.pistas_por_cadena(arbol)))
+		lista = f.pistas_por_cadena(arbol)
+		if lista == 0:
+			print('No se han encontrado pistas que contengan la cadena introducida.')
+		elif len(lista) == 1:
+			print('La pista que contiene la cadena introducida es: ', end = '')
+		else:
+			print('Las pistas que contienen la cadena introducida son: ', end = '')
+		print(lista)
 	if opcion == '4':
 		print('Las pistas que tienen efectos que contienen la cadena introducida son: ')
 		print(', '.join(f.pistas_por_efecto(arbol)))
