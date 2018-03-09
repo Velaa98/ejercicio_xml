@@ -45,11 +45,10 @@ while opcion != '0':
 		num = f.num_pistas_efecto(arbol)
 		if num == 0:
 			print('No se han encontrado pistas que tengan algún efecto que contenga la cadena introducida.')
-		if num == 1:
+		elif num == 1:
 			print('Hay una pista que tiene algún efecto que contiene la cadena introducida.')
 		else:
-			print('Hay {} pistas que tienen aĺgún efecto que contiene la cadena introducida'.format(num))
-		print(lista)
+			print('Hay {} pistas que tienen algún efecto que contiene la cadena introducida.'.format(num))
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
