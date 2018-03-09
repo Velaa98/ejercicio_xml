@@ -72,8 +72,9 @@ def pistas_por_efecto(arbol):
 				lista.append(c)
 	return lista
 
-def num_pistas_efecto(arbol, cadena):
-	cad = input('¿Quieres buscar en las pistas de audio o en las de MIDI? ')
+def num_pistas_efecto(arbol):
+	cad = input('\n¿Quieres buscar en las pistas de audio o en las de MIDI? ')
+	cadena = input('Introduce una cadena: ')
 	if cad.title() == 'Audio':
 		dic = {}
 		lista = []

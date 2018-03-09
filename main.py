@@ -42,9 +42,9 @@ while opcion != '0':
 			print('Las pistas que tienen efectos que contienen la cadena introducida son: ', end = '')
 		print(', '.join(lista))
 	if opcion == '5':
-		lista = f.num_pistas_efecto(arbol, input('Introduce una cadena: '))
-		for i in lista:
-			print(i)
+		lista = f.num_pistas_efecto(arbol)
+		if len(lista)
+		print(lista)
 	opcion = input('\nSelecciona otra opción: ')
 
 print('¡Adiós!')
