@@ -42,8 +42,13 @@ while opcion != '0':
 			print('Las pistas que tienen efectos que contienen la cadena introducida son: ', end = '')
 		print(', '.join(lista))
 	if opcion == '5':
-		lista = f.num_pistas_efecto(arbol)
-		if len(lista)
+		num = f.num_pistas_efecto(arbol)
+		if num == 0:
+			print('No se han encontrado pistas que tengan algún efecto que contenga la cadena introducida.')
+		if num == 1:
+			print('Hay una pista que tiene algún efecto que contiene la cadena introducida.')
+		else:
+			print('Hay {} pistas que tienen aĺgún efecto que contiene la cadena introducida'.format(num))
 		print(lista)
 	opcion = input('\nSelecciona otra opción: ')
 
