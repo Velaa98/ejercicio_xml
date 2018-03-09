@@ -40,7 +40,6 @@ def pistas_por_cadena(arbol):
 	lista = audio + midi
 	for i in lista:
 		if i.find(cadena) >= 0:
-			print(i)
 			encontrado = True
 			l_final.append(i)
 	if encontrado:

@@ -30,7 +30,6 @@ while opcion != '0':
 			print('La pista que contiene la cadena introducida es: ', end = '')
 		else:
 			print('Las pistas que contienen la cadena introducida son: ', end = '')
-		print(lista)
 	if opcion == '4':
 		print('Las pistas que tienen efectos que contienen la cadena introducida son: ')
 		print(', '.join(f.pistas_por_efecto(arbol)))
