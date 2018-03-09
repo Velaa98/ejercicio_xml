@@ -31,7 +31,7 @@ def pistas_por_cadena(arbol):
 	midi = []
 	lista = []
 	l_final = []
-	cadena = input('Introduce una cadena: ')
+	cadena = input('\nIntroduce una cadena: ')
 	print(cadena)
 	encontrado = False
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
@@ -49,11 +49,12 @@ def pistas_por_cadena(arbol):
 	else:
 		return 0
 
-def pistas_por_efecto(arbol, cadena):
+def pistas_por_efecto(arbol):
 	audio = []
 	midi = []
 	group = []
 	lista = []
+	cadena = input('\nIntroduce una cadena: ')
 	dic = {}
 	for i in arbol.xpath('//Tracks/AudioTrack/Name/EffectiveName/@Value'):
 		audio.append(i)

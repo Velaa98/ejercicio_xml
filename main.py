@@ -18,10 +18,8 @@ opcion = input('Selecciona una opción: ')
 
 while opcion != '0':
 	if opcion == '1':
-		print('\nLos efectos empleados en el proyecto son: ')
-		lista = f.nombres_efectos(arbol)
-		print(lista)
-		', '.join(f.nombres_efectos(arbol))
+		print('\nLos efectos empleados en el proyecto son: ', end = '')
+		print(', '.join(f.nombres_efectos(arbol)))
 	if opcion == '2':
 		print('\n{}'.format(f.cuenta_pistas(arbol)))
 	if opcion == '3':
@@ -30,12 +28,9 @@ while opcion != '0':
 		for i in f.pistas_por_cadena(arbol):
 			print(i)
 	if opcion == '4':
-		cadena = input('Introduce una cadena: ')
-		lista = f.pistas_por_efecto(arbol, cadena)
-		print('Las pistas que tienen efectos que contienen la cadena "{}" son: '.format(cadena))
-		', '.join(lista)
-		for i in lista:
-			print(i)
+		lista = 
+		print('Las pistas que tienen efectos que contienen la cadena introducida son: ')
+		print(', '.join(f.pistas_por_efecto(arbol)))
 	if opcion == '5':
 		lista = f.num_pistas_efecto(arbol, input('Introduce una cadena: '))
 		for i in lista:
