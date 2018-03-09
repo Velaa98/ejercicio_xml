@@ -25,10 +25,8 @@ while opcion != '0':
 	if opcion == '3':
 		if f.pistas_por_cadena(arbol) == 0:
 			print('No se ha encontrado ninguna pista que contenga la cadena introducida.')
-		for i in f.pistas_por_cadena(arbol):
-			print(i)
+		print(','.join(f.pistas_por_cadena(arbol)))
 	if opcion == '4':
-		lista = 
 		print('Las pistas que tienen efectos que contienen la cadena introducida son: ')
 		print(', '.join(f.pistas_por_efecto(arbol)))
 	if opcion == '5':
